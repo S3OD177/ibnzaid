@@ -49,7 +49,7 @@ function setImage() {
 	// 		families: ['Almarai:300,400,700']
 	// 	}
 	// });
-    context.font= '55px Almarai';
+    context.font= '35px Almarai';
     context.fillStyle= '#4A5456';
     context.textAlign= 'center';
 
