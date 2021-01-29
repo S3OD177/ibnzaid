@@ -6,7 +6,7 @@ var dwn = document.getElementById('btndownload')
 // canvas.height= window.innerHeight;preview
 
 document.getElementById("canvas").style.visibility = "hidden";
-document.getElementById("preview").style.visibility = "hidden";
+document.getElementById("preview").style.visibility = "visibile";
 document.getElementById("download").style.visibility = "hidden";
 var context = canvas.getContext("2d");
 
