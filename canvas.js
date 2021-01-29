@@ -37,7 +37,7 @@ function setImage() {
     // canvas.width= image.clientWidth;
     // canvas.height= image.clientHeight;
 
-    //context.drawImage(image,0,0,1024,1024);
+    context.drawImage(image,0,0,1024,1024);
     // context.drawImage(image,50,50,500,500);
 
     // context.drawImage(image, -190,0);
