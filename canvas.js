@@ -6,7 +6,7 @@ var dwn = document.getElementById('btndownload')
 // canvas.height= window.innerHeight;preview
 
 document.getElementById("canvas").style.visibility = "hidden";
-document.getElementById("preview").style.visibility = "visible";
+document.getElementById("preview").style.visibility = "hidden";
 document.getElementById("download").style.visibility = "hidden";
 var context = canvas.getContext("2d");
 
@@ -59,7 +59,7 @@ function setImage() {
 
 
 
-    document.getElementById("preview").style.visibility = "visible";
+    document.getElementById("preview").style.visibility = "hidden";
 
     var image = canvas.toDataURL("image/jpg");
     // document.getElementById("download").href = image;
