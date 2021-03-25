@@ -1,0 +1,10 @@
+#canvas{
+    /* content: url(bg1.png); */
+    /* background: url('bg1.png'); */
+    border: 5px solid ;
+    /* background-color: red; */
+}
+
+body{
+    margin: 0;
+}
