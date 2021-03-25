@@ -5,9 +5,14 @@ canvas.height= 1024;
 // canvas.width= window.innerWidth;
 // canvas.height= window.innerHeight;preview
 
-document.getElementById("canvas").style.visibility = "hidden";
-document.getElementById("preview").style.visibility = "hidden";
-document.getElementById("download").style.visibility = "hidden";
+document.getElementById("canvas").style.display = "none"; // after
+//document.getElementById("canvas").style.visibility = "hidden"; // before 
+document.getElementById("preview").style.display = "none"; // after
+//document.getElementById("preview").style.visibility = "hidden"; // before
+
+document.getElementById("download").style.display = "none"; //after
+//document.getElementById("download").style.visibility = "hidden"; // before
+
 var context = canvas.getContext("2d");
 
 // var background = new Image();
