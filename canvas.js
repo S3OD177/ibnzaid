@@ -60,7 +60,7 @@ function setImage() {
 
     context.moveTo(0,canvas.height/2);
   
-    context.fillText(document.getElementById("txtName").value,canvas.width/2,(canvas.height/2)+250);
+    context.fillText(document.getElementById("txtName").value,canvas.width/2,(canvas.height/2)+260);
 
 
 
