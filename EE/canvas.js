@@ -48,6 +48,7 @@ function AddUserPhoto() {
         // ctx.drawImage(img, 0 ,0);
 
         ctx.globalCompositeOperation = 'destination-over';
+        img.setAttribute('crossorigin', 'anonymous');
         img.src = "TT.jpg";
         ctx.drawImage(img,0,0);
 
