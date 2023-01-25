@@ -29,6 +29,10 @@
       background-color: rgb(255, 255, 255);
       max-width: 100%;
     }
+    #canvas1 {
+      background-color: rgb(255, 255, 255);
+      max-width: 100%;
+    }
     body {
       font-family: 'Almarai'
     }
@@ -225,6 +229,7 @@
                     accept="image/*"
                     onchange="AddUserPhoto();"
               />
+              <button class="btn btn-danger form-control" onclick="clipEE();">EE</button>
 
               <button class="btn btn-danger form-control" onclick="downloadEE();">تحميل المعايدة</button>
               <br>
@@ -251,6 +256,9 @@
   </section>
 
   <canvas id="canvas"></canvas>
+  <canvas id="canvas1" visibility: hidden></canvas>
+  <canvas id="canvas2"></canvas>
+
   <script src="canvas.js"></script>
 
 
