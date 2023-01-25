@@ -64,6 +64,7 @@ function downloadEE() {
     a.download = "EE.jpg";
     a.href = dataURL;
     // simulate a click on the anchor element
+    a.click();
 }
 
 
