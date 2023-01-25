@@ -25,9 +25,12 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style type="text/css">
     /* @import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap'); */
-
+    #canvas {
+      background-color: rgb(255, 255, 255);
+      width: 1080px;
+      height: 1080px;
+    }
     body {
-      margin-top: 20px;
       font-family: 'Almarai'
     }
 
@@ -202,24 +205,29 @@
 
             <ul class="candidates-profile-icons list-inline mb-3"><br>
 
-              <label for="imgEE" class="btn form-control">
+              <label for="BackgorundEE" class="btn form-control">
+                <i class="fa fa-cloud-upload"></i> ارفع خلفية
+              </label>
+              <input 
+                    id="BackgorundEE" 
+                    type="file"
+                    name="filename1" 
+                    accept="image/*"
+                    onchange="BackgorundEE();"
+              />
+
+              <label for="AddUserPhoto" class="btn form-control">
                 <i class="fa fa-cloud-upload"></i> ارفع صورة
               </label>
               <input 
-                    id="imgEE" 
+                    id="AddUserPhoto" 
                     type="file" 
-                    name="filename" 
-                    accept=".png, .jpg" 
-                    onchange="document.getElementById('imgEE').innerHtml = '<img src="' +img+'"/>';"
+                    name="filename2" 
+                    accept="image/*"
+                    onchange="AddUserPhoto();"
               />
 
-              <img id="imgEE">
-
-
-              <button class="btn btn-danger form-control" onclick="setImage();">تحميل المعايدة</button>
-
-              <a class="btn btn-success" id="download" download="myImage.png" href="">تحميل الصورة</a>
-
+              <button class="btn btn-danger form-control" onclick="downloadEE();">تحميل المعايدة</button>
               <br>
             </ul>
             <ul class="candidates-profile-social-icons list-inline mb-0">
@@ -233,11 +241,6 @@
             </ul>
 
             <br>
-            <!--<li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>-->
-            <!--<li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>-->
-            <!--<li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>-->
-            <!--<li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>-->
-            <!--<li class="list-inline-item"><a href="#" class="text-warning"><i class="mdi mdi-star"></i></a></li>-->
             </ul>
 
 
@@ -249,7 +252,6 @@
   </section>
 
   <canvas id="canvas"></canvas>
-  <p><img id="preview" src="bg1.png" class="image"></p>
   <script src="canvas.js"></script>
 
 
