@@ -24,7 +24,7 @@ function PreviewImage(input) {
 function setImage() {
     var image = new Image();
     image.crossOrigin = "anonymous";
-    image.src = "bg1.png";
+    image.src = "bg1.jpg";
 
     image.onload = function() {
         context.drawImage(image, 0, 0, 1024, 1024);
