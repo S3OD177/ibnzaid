@@ -27,7 +27,7 @@ function setImage() {
     image.src = "bg1.jpg";
 
     image.onload = function() {
-        context.drawImage(image, 0, 0, 1024, 1024);
+        context.drawImage(image, 0, 0, 3200, 4817);
  
         context.font= '35px Almarai';
         context.fillStyle= '#4A5456';
