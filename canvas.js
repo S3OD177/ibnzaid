@@ -29,12 +29,12 @@ function setImage() {
     image.onload = function() {
         context.drawImage(image, 0, 0, 3200, 4817);
  
-        context.font= '150px Almarai';
+        context.font= '125px Almarai';
         context.fillStyle= '#4A5456';
         context.textAlign= 'center';
      
         context.moveTo(0,canvas.height/2);
-        context.fillText(document.getElementById("txtName").value, canvas.width/2, 3040);
+        context.fillText(document.getElementById("txtName").value, canvas.width/2, 3080);
  
         var dataURL = canvas.toDataURL("image/jpg", 1.0);
         var a = document.createElement("a");
