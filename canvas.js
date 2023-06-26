@@ -29,7 +29,7 @@ function setImage() {
     image.onload = function() {
         context.drawImage(image, 0, 0, 3200, 4817);
  
-        context.font= '60px Almarai';
+        context.font= '200px Almarai';
         context.fillStyle= '#4A5456';
         context.textAlign= 'center';
      
