@@ -1,7 +1,7 @@
 var canvas = document.getElementById("canvas");
 var dwn = document.getElementById('btndownload')
-canvas.width= 1024;
-canvas.height= 1024;
+canvas.width= 3200;
+canvas.height= 4817;
 
 document.getElementById("canvas").style.display = "none"; // after
 document.getElementById("preview").style.display = "none"; // after
