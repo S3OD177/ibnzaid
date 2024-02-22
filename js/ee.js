@@ -2,19 +2,28 @@ let cards = null;
 let selectedCard = null;
 let selectedCardHtml = null;
 
-
 async function loadMetaData () {
     const response = await fetch('./metadata/metadata.json');
     const data = await response.json();
     cards = data.cards;
 
-    titleElement.innerText = data.title;
+    document.getElementById('title').innerText = data.title;
     if (data.cards.length > 0) {
-        modalBody.innerHTML = '';
+        document.getElementById('modal-body').innerHTML = '';
     }
 
-    data.cards.forEach((card, index) => {
-        modalBody.innerHTML += createCardHTML(card, index);
+    data.cards.map((card, index) => {
+        // modify modal-body
+        document.getElementById('modal-body').innerHTML += `
+            <div id="${index}" class="card" data-img-link="${card.imgLink}" data-title="${card.title}">
+                <img src="${card.imgLink}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${card.title}</h5>
+                    <button class="btn btn-primary" onclick="selectImage('${card.imgLink}', '${index}')">اختر</button>
+                </div>
+            </div>
+            <br>
+        `;
     });
 }
 
@@ -23,29 +32,18 @@ function selectImage(imgLink, cardId) {
 
     // Reset the previously selected card
     if (selectedCardHtml) {
-        selectedCardHtml.innerHTML = createCardHTML(selectedCard, selectedCardHtml.id);
+        selectedCardHtml.innerHTML = `
+            <img src="${selectedCardHtml.dataset.imgLink}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${selectedCardHtml.dataset.title}</h5>
+                <button class="btn btn-primary" onclick="selectImage('${selectedCardHtml.dataset.imgLink}', '${selectedCardHtml.id}')">اختر</button>
+            </div>
+        `;
     }
 
     // Modify the selected card
     selectedCardHtml = document.getElementById(cardId);
-    selectedCardHtml.innerHTML = createSelectedCardHTML(imgLink, cardId);
-}
-
-function createCardHTML(card, index) {
-    return `
-        <div id="${index}" class="card" data-img-link="${card.imgLink}" data-title="${card.title}">
-            <img src="${card.imgLink}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${card.title}</h5>
-                <button class="btn btn-primary" onclick="selectImage('${card.imgLink}', '${index}')">اختر</button>
-            </div>
-        </div>
-        <br>
-    `;
-}
-
-function createSelectedCardHTML(imgLink, cardId) {
-    return `
+    selectedCardHtml.innerHTML = `
         <img src="${imgLink}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${selectedCardHtml.dataset.title}</h5>
@@ -89,7 +87,11 @@ function generateImage() {
         parameters['txt-color'] = selectedCard.txtColor;
     }
 
-    // fetch the image then download it    
+    if (selectedCard.txtColor) {
+        parameters['txt-color'] = selectedCard.txtColor;
+    }
+
+    // fetch the image then download it
     fetch(`${selectedCard.imgLink}?${new URLSearchParams(parameters)}`)
         .then(response => response.blob())
         .then(blob => {
@@ -105,5 +107,7 @@ function generateImage() {
 function utf8_to_b64(str) {
     return window.btoa(unescape(encodeURIComponent(str)));
 }
+
+//https://iee.imgix.net/bg1-2.jpg
 
 loadMetaData();
