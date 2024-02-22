@@ -13,7 +13,7 @@
             "occasion": "عيد الأضحى"
         },
         {
-            "id": 1,
+            "id": 2,
             "title":"Modify the title in the JSON file",
             "imgLink": "https://saud.imgix.net/cardsImg/eidf1.jpeg", 
             "x": null,
@@ -24,7 +24,7 @@
             "occasion": "عيد الفطر"
         },
         {
-            "id": 1,
+            "id": 3,
             "title":"Modify the title in the JSON file",
             "imgLink": "https://saud.imgix.net/cardsImg/ram1.jpeg", 
             "x": null,
