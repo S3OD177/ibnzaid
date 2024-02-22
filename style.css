@@ -1,10 +1,54 @@
-#canvas{
-    /* content: url(bg1.png); */
-    /* background: url('bg1.png'); */
-    border: 5px solid ;
-    /* background-color: red; */
+body{
+    background: #1a1922;
+    font-family: 'Almarai';
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    direction: rtl !important;
 }
 
-body{
-    margin: 0;
+.mainView {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* add this if .mainView is the direct child of body */
+}
+
+.mainView section {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.logo {
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;  /* adjust as needed */
+    height: 300px; /* adjust as needed */
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.btn-success {
+    width: 100%;
+}
+
+.selected {
+    border: 2px solid #ff4d00;
 }
