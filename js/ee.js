@@ -16,6 +16,7 @@ async function loadMetaData() {
 
 function showOccasion() {
     document.getElementById('modal-body').innerHTML = '';
+    document.getElementById('downloadButton').style.display = 'none'; // Show the download button
 
     // Give the user occasion
     // the options are Ramadan, Eid al-Fitr , and Eid al-Adha
@@ -45,38 +46,6 @@ function showOccasion() {
     </div>
     <br>
 `;
-
-    // with image 
-    return
-    document.getElementById('modal-body').innerHTML = `
-<div id="0" class="card" data-img-link="https://iee.imgix.net/bg1-2.jpg" data-title="رمضان">
-    <a href="#" onclick="selectOccasion(1)" style="color: inherit; text-decoration: none;">
-        <div class="card-body d-flex flex-column align-items-center">
-            <img src="https://www.pngmart.com/files/13/Crescent-Moon-Transparent-PNG.png" class="card-img-top" alt="...">
-            <h5 class="card-title mt-3">رمضان</h5>
-        </div>
-    </a>
-</div>
-<br>
-<div id="1" class="card" data-img-link="https://iee.imgix.net/bg2-2.jpg" data-title="عيد الفطر">
-    <a href="#" onclick="selectOccasion(2)" style="color: inherit; text-decoration: none;">
-        <div class="card-body d-flex flex-column align-items-center">
-            <img src="https://iee.imgix.net/bg2-2.jpg" class="card-img-top" style="wdith=100px;" alt="...">
-            <h5 class="card-title mt-3">عيد الفطر</h5>
-        </div>
-    </a>
-</div>
-<br>
-<div id="2" class="card" data-img-link="https://iee.imgix.net/bg3-2.jpg" data-title="عيد الأضحى">
-    <a href="#" onclick="selectOccasion(3)" style="color: inherit; text-decoration: none;">
-        <div class="card-body d-flex flex-column align-items-center">
-            <img src="https://iee.imgix.net/bg3-2.jpg" class="card-img-top" alt="...">
-            <h5 class="card-title mt-3">عيد الأضحى</h5>
-        </div>
-    </a>
-</div>
-<br>
-`;
 }
 
 function selectOccasion(l_occasion) {
@@ -99,6 +68,7 @@ function selectOccasion(l_occasion) {
 function showCards(cards) {
     if (cards.length > 0) {
         document.getElementById('modal-body').innerHTML = '';
+        document.getElementById('downloadButton').style.display = 'block'; // Show the download button
     } else {
         document.getElementById('modal-body').innerHTML = `
             <h1>لا يوجد كروت</h1>
