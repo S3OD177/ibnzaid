@@ -1,18 +1,111 @@
 let cards = null;
 let selectedCard = null;
 let selectedCardHtml = null;
+let occasion = null;
 
-async function loadMetaData () {
+async function loadMetaData() {
     const response = await fetch('./metadata/metadata.json');
     const data = await response.json();
     cards = data.cards;
 
     document.getElementById('title').innerText = data.title;
-    if (data.cards.length > 0) {
+
+    // give the user options to choose from for occasion
+    showOccasion();
+}
+
+function showOccasion() {
+    document.getElementById('modal-body').innerHTML = '';
+
+    // Give the user occasion
+    // the options are Ramadan, Eid al-Fitr , and Eid al-Adha
+    document.getElementById('modal-body').innerHTML = `
+    <div id="0" class="card" data-img-link="https://iee.imgix.net/bg1-2.jpg" data-title="رمضان">
+        <a href="#" onclick="selectOccasion(1)" style="color: inherit; text-decoration: none;">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title mt-3">رمضان</h5>
+            </div>
+        </a>
+    </div>
+    <br>
+    <div id="1" class="card" data-img-link="https://iee.imgix.net/bg2-2.jpg" data-title="عيد الفطر">
+        <a href="#" onclick="selectOccasion(2)" style="color: inherit; text-decoration: none;">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title mt-3">عيد الفطر</h5>
+            </div>
+        </a>
+    </div>
+    <br>
+    <div id="2" class="card" data-img-link="https://iee.imgix.net/bg3-2.jpg" data-title="عيد الأضحى">
+        <a href="#" onclick="selectOccasion(3)" style="color: inherit; text-decoration: none;">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title mt-3">عيد الأضحى</h5>
+            </div>
+        </a>
+    </div>
+    <br>
+`;
+
+    // with image 
+    return
+    document.getElementById('modal-body').innerHTML = `
+<div id="0" class="card" data-img-link="https://iee.imgix.net/bg1-2.jpg" data-title="رمضان">
+    <a href="#" onclick="selectOccasion(1)" style="color: inherit; text-decoration: none;">
+        <div class="card-body d-flex flex-column align-items-center">
+            <img src="https://www.pngmart.com/files/13/Crescent-Moon-Transparent-PNG.png" class="card-img-top" alt="...">
+            <h5 class="card-title mt-3">رمضان</h5>
+        </div>
+    </a>
+</div>
+<br>
+<div id="1" class="card" data-img-link="https://iee.imgix.net/bg2-2.jpg" data-title="عيد الفطر">
+    <a href="#" onclick="selectOccasion(2)" style="color: inherit; text-decoration: none;">
+        <div class="card-body d-flex flex-column align-items-center">
+            <img src="https://iee.imgix.net/bg2-2.jpg" class="card-img-top" style="wdith=100px;" alt="...">
+            <h5 class="card-title mt-3">عيد الفطر</h5>
+        </div>
+    </a>
+</div>
+<br>
+<div id="2" class="card" data-img-link="https://iee.imgix.net/bg3-2.jpg" data-title="عيد الأضحى">
+    <a href="#" onclick="selectOccasion(3)" style="color: inherit; text-decoration: none;">
+        <div class="card-body d-flex flex-column align-items-center">
+            <img src="https://iee.imgix.net/bg3-2.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title mt-3">عيد الأضحى</h5>
+        </div>
+    </a>
+</div>
+<br>
+`;
+}
+
+function selectOccasion(l_occasion) {
+    occasion = l_occasion;
+    switch (l_occasion) {
+        case 1:
+            showCards(cards.filter(card => card.occasion === 'رمضان'));
+            break;
+        case 2:
+            showCards(cards.filter(card => card.occasion === 'عيد الفطر'));
+            break;
+        case 3:
+            showCards(cards.filter(card => card.occasion === 'عيد الأضحى'));
+            break;
+        default:
+            break;
+    }
+}
+
+function showCards(cards) {
+    if (cards.length > 0) {
         document.getElementById('modal-body').innerHTML = '';
+    } else {
+        document.getElementById('modal-body').innerHTML = `
+            <h1>لا يوجد كروت</h1>
+        `;
     }
 
-    data.cards.map((card, index) => {
+    cards.map((card, index) => {
         // modify modal-body
         document.getElementById('modal-body').innerHTML += `
             <div id="${index}" class="card" data-img-link="${card.imgLink}" data-title="${card.title}">
@@ -53,6 +146,11 @@ function selectImage(imgLink, cardId) {
 }
 
 function generateImage() {
+    if (!occasion) {
+        alert('الرجاء اختيار المناسبة');
+        return;
+    }
+
     if (!selectedCard) {
         alert('الرجاء اختيار الكارت');
         return;
@@ -60,13 +158,13 @@ function generateImage() {
 
     const name = document.getElementById('name').value;
     console.log(name);
-    
+
     // Encode the name in Base64
     let encodedName = utf8_to_b64(name);
-    
+
     // Remove any padding characters (=)
     encodedName = encodedName.replace(/=/g, '');
-    
+
     let parameters = {
         txt64: encodedName,
         'txt-size': selectedCard.txtSize,
@@ -101,12 +199,10 @@ function generateImage() {
             a.download = `${name}.jpg`;
             a.click();
         });
-} 
+}
 
 function utf8_to_b64(str) {
     return window.btoa(unescape(encodeURIComponent(str)));
 }
-
-//https://iee.imgix.net/bg1-2.jpg
 
 loadMetaData();

@@ -49,6 +49,10 @@ body{
     width: 100%;
 }
 
+.card:hover {
+    background-color: #f8f9fa; /* Change this to the color you want */
+}
+
 .selected {
     border: 2px solid #ff4d00;
 }
