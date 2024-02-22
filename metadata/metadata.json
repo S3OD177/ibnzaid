@@ -15,13 +15,24 @@
         {
             "id": 2,
             "title":"Modify the title in the JSON file",
-            "imgLink": "https://saud.imgix.net/cardsImg/eid1.jpeg", 
+            "imgLink": "https://saud.imgix.net/cardsImg/eidf1.jpeg", 
             "x": null,
             "y": 2960,
             "width": null,
             "height": null,
             "txtSize": 200,
             "occasion": "عيد الفطر"
+        }
+        {
+            "id": 3,
+            "title":"Modify the title in the JSON file",
+            "imgLink": "https://saud.imgix.net/cardsImg/ram1.jpeg", 
+            "x": null,
+            "y": 2960,
+            "width": null,
+            "height": null,
+            "txtSize": 200,
+            "occasion": "رمضان"
         }
     ]
 }
