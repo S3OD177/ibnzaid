@@ -71,7 +71,7 @@ function showCards(cards) {
         document.getElementById('downloadButton').style.display = 'block'; // Show the download button
     } else {
         document.getElementById('modal-body').innerHTML = `
-            <h1>لا يوجد كروت</h1>
+            <h1>قريبا</h1>
         `;
     }
 
@@ -110,7 +110,7 @@ function selectImage(imgLink, cardId) {
         <img src="${imgLink}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${selectedCardHtml.dataset.title}</h5>
-            <button class="btn btn-success" onclick="selectImage('${imgLink}', '${cardId}')">اختير</button>
+            <button class="btn btn-success" onclick="selectImage('${imgLink}', '${cardId}')">تم الاختيار</button>
         </div>
     `;
 }
@@ -122,7 +122,7 @@ function generateImage() {
     }
 
     if (!selectedCard) {
-        alert('الرجاء اختيار الكارت');
+        alert('الرجاء اختيار البطاقة');
         return;
     }
 
