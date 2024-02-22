@@ -3,7 +3,7 @@
     "cards": [
         {
             "id": 1,
-            "title":"Modify the title in the JSON file",
+            "title":"",
             "imgLink": "https://saud.imgix.net/cardsImg/bg1-2.jpg", 
             "x": null,
             "y": 2960,
@@ -14,7 +14,7 @@
         },
         {
             "id": 2,
-            "title":"Modify the title in the JSON file",
+            "title":"",
             "imgLink": "https://saud.imgix.net/cardsImg/eidf1.jpeg", 
             "x": null,
             "y": 2960,
@@ -25,7 +25,7 @@
         },
         {
             "id": 3,
-            "title":"Modify the title in the JSON file",
+            "title":"",
             "imgLink": "https://saud.imgix.net/cardsImg/ram1.jpeg", 
             "x": null,
             "y": 2960,
