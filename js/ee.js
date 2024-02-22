@@ -101,7 +101,7 @@ function generateImage() {
             a.download = `${name}.jpg`;
             a.click();
         });
-}
+} 
 
 function utf8_to_b64(str) {
     return window.btoa(unescape(encodeURIComponent(str)));
