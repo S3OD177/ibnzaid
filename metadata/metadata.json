@@ -15,11 +15,13 @@
         {
             "id": 2,
             "title":"Modify the title in the JSON file",
-            "imgLink": "https://iee.imgix.net/bg1-2.jpg/", 
-            "x": -1,
-            "y": 0,
-            "width": 1,
-            "height": 1
+            "imgLink": "https://saud.imgix.net/cardsImg/eid1.jpeg", 
+            "x": null,
+            "y": 2960,
+            "width": null,
+            "height": null,
+            "txtSize": 200,
+            "occasion": "عيد الفطر"
         }
     ]
 }
