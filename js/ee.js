@@ -135,8 +135,8 @@ function generateImage() {
     // Encode the name in Base64
     let encodedName = utf8_to_b64(name);
 
-    // Remove any padding characters (=)
-    encodedName = encodedName.replace(/=/g, '');
+    // Make the Base64 string URL safe
+    encodedName = encodedName.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 
     let parameters = {
         txt64: encodedName,
@@ -161,7 +161,7 @@ function generateImage() {
     if (selectedCard.txtColor) {
         parameters['txt-color'] = selectedCard.txtColor;
     }
-
+    console.log(parameters);
     // fetch the image then download it
     fetch(`${selectedCard.imgLink}?${new URLSearchParams(parameters)}`)
         .then(response => response.blob())
