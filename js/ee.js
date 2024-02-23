@@ -2,6 +2,7 @@ let cards = null;
 let selectedCard = null;
 let selectedCardHtml = null;
 let occasion = null;
+let occasionCards = null;
 
 async function loadMetaData() {
     const response = await fetch('./metadata/metadata.json');
@@ -52,13 +53,16 @@ function selectOccasion(l_occasion) {
     occasion = l_occasion;
     switch (l_occasion) {
         case 1:
-            showCards(cards.filter(card => card.occasion === 'رمضان'));
+            occasionCards = cards.filter(card => card.occasion === 'رمضان');
+            showCards(occasionCards);
             break;
         case 2:
-            showCards(cards.filter(card => card.occasion === 'عيد الفطر'));
+            occasionCards = cards.filter(card => card.occasion === 'عيد الفطر');
+            showCards(occasionCards);
             break;
         case 3:
-            showCards(cards.filter(card => card.occasion === 'عيد الأضحى'));
+            occasionCards = cards.filter(card => card.occasion === 'عيد الأضحى');
+            showCards(occasionCards);
             break;
         default:
             break;
@@ -82,7 +86,7 @@ function showCards(cards) {
                 <img src="${card.imgLink}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${card.title}</h5>
-                    <button class="btn btn-primary" onclick="selectImage('${card.imgLink}', '${index}')">اختر</button>
+                    <button class="btn btn-primary" onclick="selectImage('${card.imgLink}', ${index})">اختر</button>
                 </div>
             </div>
             <br>
@@ -91,8 +95,8 @@ function showCards(cards) {
 }
 
 function selectImage(imgLink, cardId) {
-    selectedCard = cards[cardId];
-
+    selectedCard = occasionCards[cardId];
+    
     // Reset the previously selected card
     if (selectedCardHtml) {
         selectedCardHtml.innerHTML = `
@@ -127,7 +131,6 @@ function generateImage() {
     }
 
     const name = document.getElementById('name').value;
-    console.log(name);
 
     // Encode the name in Base64
     let encodedName = utf8_to_b64(name);
