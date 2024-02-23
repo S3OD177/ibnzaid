@@ -142,7 +142,7 @@ function generateImage() {
         txt64: encodedName,
         'txt-size': selectedCard.txtSize,
         'txt-align': 'center',
-        'txt-font': 'Farah',
+        'txt-font': 'Almarai',
         'txt-fit': 'max'
     }
 
