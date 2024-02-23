@@ -6,7 +6,7 @@
             "title":" ",
             "imgLink": "https://saud.imgix.net/cardsImg/bg1-2.jpg", 
             "x": null,
-            "y": 2930,
+            "y": 3000,
             "width": null,
             "height": null,
             "txtSize": 150,
@@ -17,7 +17,7 @@
             "title":" ",
             "imgLink": "https://saud.imgix.net/cardsImg/eidf1.jpeg", 
             "x": null,
-            "y": 930,
+            "y": 950,
             "width": null,
             "height": null,
             "txtSize": 60,
@@ -28,10 +28,10 @@
             "title":" ",
             "imgLink": "https://saud.imgix.net/cardsImg/ram1.jpeg", 
             "x": null,
-            "y": 930,
+            "y": 950,
             "width": null,
             "height": null,
-            "txtSize": 60,
+            "txtSize": 55,
             "occasion": "رمضان"
         }
     ]
