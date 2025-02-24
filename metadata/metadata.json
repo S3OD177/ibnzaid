@@ -33,10 +33,10 @@
             "height": null,
             "txtSize": 55,
             "occasion": "رمضان"
-        },
+        }
         {
             "id": 4,
-            "title":" ",
+            "title":"",
             "imgLink": "https://saud.imgix.net/cardsImg/ram2.jpeg", 
             "x": null,
             "y": 1000,
@@ -59,13 +59,35 @@
         {
             "id": 6,
             "title":" ",
-            "imgLink": "https://saud.imgix.net/cardsImg/ram4.jpeg", 
+            "imgLink": "", 
             "x": null,
             "y": 950,
             "width": null,
             "height": null,
             "txtSize": 58,
-            "occasion": "رمضان"
+            "occasion": ""
+        },
+        {
+            "id": 7,
+            "title":" ",
+            "imgLink": "", 
+            "x": null,
+            "y": 2800,
+            "width": null,
+            "height": null,
+            "txtSize": 140,
+            "occasion": ""
+        },
+        {
+            "id": 8,
+            "title":" ",
+            "imgLink": "", 
+            "x": null,
+            "y": 2900,
+            "width": null,
+            "height": null,
+            "txtSize": 145,
+            "occasion": ""
         }
     ]
 }
