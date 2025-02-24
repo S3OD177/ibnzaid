@@ -59,35 +59,35 @@
         {
             "id": 6,
             "title":" ",
-            "imgLink": "", 
+            "imgLink": "https://saud.imgix.net/cardsImg/eidf2.jpeg", 
             "x": null,
             "y": 950,
             "width": null,
             "height": null,
             "txtSize": 58,
-            "occasion": ""
+            "occasion": "عيد الفطر"
         },
         {
             "id": 7,
             "title":" ",
-            "imgLink": "", 
+            "imgLink": "https://saud.imgix.net/cardsImg/eidf3.jpeg", 
             "x": null,
             "y": 2800,
             "width": null,
             "height": null,
             "txtSize": 140,
-            "occasion": ""
+            "occasion": "عيد الفطر"
         },
         {
             "id": 8,
             "title":" ",
-            "imgLink": "", 
+            "imgLink": "https://saud.imgix.net/cardsImg/eidf4.jpeg", 
             "x": null,
             "y": 2900,
             "width": null,
             "height": null,
             "txtSize": 145,
-            "occasion": ""
+            "occasion": "عيد الفطر"
         }
     ]
 }
