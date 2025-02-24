@@ -5,14 +5,25 @@ let occasion = null;
 let occasionCards = null;
 
 async function loadMetaData() {
-    const response = await fetch('./metadata/metadata.json');
-    const data = await response.json();
-    cards = data.cards;
+    try {
+        const response = await fetch('./metadata/metadata.json');
+        const data = await response.json();
+        cards = data.cards;
 
-    document.getElementById('title').innerText = data.title;
+        if (data.title) {
+            document.getElementById('title').innerText = data.title;
+        }
 
-    // give the user options to choose from for occasion
-    showOccasion();
+        // give the user options to choose from for occasion
+        showOccasion();
+    } catch (error) {
+        console.error('Error loading metadata:', error);
+        document.getElementById('modal-body').innerHTML = `
+            <div class="alert alert-danger" role="alert">
+                حدث خطأ أثناء تحميل البيانات. الرجاء المحاولة مرة أخرى.
+            </div>
+        `;
+    }
 }
 
 function showOccasion() {
@@ -50,6 +61,11 @@ function showOccasion() {
 }
 
 function selectOccasion(l_occasion) {
+    if (!cards) {
+        console.error('Cards data not loaded');
+        return;
+    }
+
     occasion = l_occasion;
     switch (l_occasion) {
         case 1:
