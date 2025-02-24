@@ -33,7 +33,7 @@
             "height": null,
             "txtSize": 55,
             "occasion": "رمضان"
-        },
+        },  
         {
             "id": 4,
             "title":"",
@@ -88,6 +88,17 @@
             "height": null,
             "txtSize": 145,
             "occasion": "عيد الفطر"
+        },
+        {
+            "id": 9,
+            "title":" ",
+            "imgLink": "https://saud.imgix.net/cardsImg/eid2.jpeg", 
+            "x": null,
+            "y": 2800,
+            "width": null,
+            "height": null,
+            "txtSize": 140,
+            "occasion": "عيد الأضحى"
         }
     ]
 }
