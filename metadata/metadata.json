@@ -62,7 +62,7 @@
             "title":" ",
             "imgLink": "https://saud.imgix.net/cardsImg/eidf2.jpeg", 
             "x": null,
-            "y": 950,
+            "y": 960,
             "width": null,
             "height": null,
             "txtSize": 58,
@@ -73,10 +73,10 @@
             "title":" ",
             "imgLink": "https://saud.imgix.net/cardsImg/eidf3.jpeg", 
             "x": null,
-            "y": 2800,
+            "y": 975,
             "width": null,
             "height": null,
-            "txtSize": 140,
+            "txtSize": 55,
             "occasion": "عيد الفطر"
         },
         {
