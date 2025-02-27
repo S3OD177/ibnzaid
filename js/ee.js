@@ -28,36 +28,35 @@ async function loadMetaData() {
 
 function showOccasion() {
     document.getElementById('modal-body').innerHTML = '';
-    document.getElementById('downloadButton').style.display = 'none'; // Show the download button
+    document.getElementById('downloadButton').style.display = 'none';
 
-    // Give the user occasion
-    // the options are Ramadan, Eid al-Fitr , and Eid al-Adha
     document.getElementById('modal-body').innerHTML = `
-    <div id="0" class="card" data-img-link="https://saud.imgix.net/cardsImg/ram1.jpeg" data-title="رمضان">
-        <a href="#" onclick="selectOccasion(1)" style="color: inherit; text-decoration: none;">
-            <div class="card-body d-flex flex-column align-items-center">
-                <h5 class="card-title mt-3">رمضان</h5>
-            </div>
-        </a>
+    <div class="container px-4">
+        <div id="0" class="card mb-3" data-img-link="https://saud.imgix.net/cardsImg/ram1.jpeg" data-title="رمضان">
+            <a href="#" onclick="selectOccasion(1)" class="text-decoration-none text-dark">
+                <div class="card-body d-flex justify-content-center align-items-center py-3">
+                    <h5 class="card-title m-0">رمضان</h5>
+                </div>
+            </a>
+        </div>
+
+        <div id="1" class="card mb-3" data-img-link="https://saud.imgix.net/cardsImg/eidf1.jpeg" data-title="عيد الفطر">
+            <a href="#" onclick="selectOccasion(2)" class="text-decoration-none text-dark">
+                <div class="card-body d-flex justify-content-center align-items-center py-3">
+                    <h5 class="card-title m-0">عيد الفطر</h5>
+                </div>
+            </a>
+        </div>
+
+        <div id="2" class="card mb-3" data-img-link="https://saud.imgix.net/cardsImg/bg1-2.jpg" data-title="عيد الأضحى">
+            <a href="#" onclick="selectOccasion(3)" class="text-decoration-none text-dark">
+                <div class="card-body d-flex justify-content-center align-items-center py-3">
+                    <h5 class="card-title m-0">عيد الأضحى</h5>
+                </div>
+            </a>
+        </div>
     </div>
-    <br>
-    <div id="1" class="card" data-img-link="https://saud.imgix.net/cardsImg/eidf1.jpeg" data-title="عيد الفطر">
-        <a href="#" onclick="selectOccasion(2)" style="color: inherit; text-decoration: none;">
-            <div class="card-body d-flex flex-column align-items-center">
-                <h5 class="card-title mt-3">عيد الفطر</h5>
-            </div>
-        </a>
-    </div>
-    <br>
-    <div id="2" class="card" data-img-link="https://saud.imgix.net/cardsImg/bg1-2.jpg" data-title="عيد الأضحى">
-        <a href="#" onclick="selectOccasion(3)" style="color: inherit; text-decoration: none;">
-            <div class="card-body d-flex flex-column align-items-center">
-                <h5 class="card-title mt-3">عيد الأضحى</h5>
-            </div>
-        </a>
-    </div>
-    <br>
-`;
+    `;
 }
 
 function selectOccasion(l_occasion) {
@@ -88,7 +87,7 @@ function selectOccasion(l_occasion) {
 function showCards(cards) {
     if (cards.length > 0) {
         document.getElementById('modal-body').innerHTML = '';
-        document.getElementById('downloadButton').style.display = 'block'; // Show the download button
+        document.getElementById('downloadButton').style.display = 'block';
     } else {
         document.getElementById('modal-body').innerHTML = `
             <h1>قريبا</h1>
@@ -96,16 +95,14 @@ function showCards(cards) {
     }
 
     cards.map((card, index) => {
-        // modify modal-body
         document.getElementById('modal-body').innerHTML += `
-            <div id="${index}" class="card" data-img-link="${card.imgLink}" data-title="${card.title}">
-                <img src="${card.imgLink}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${card.title}</h5>
-                    <button class="btn btn-primary" onclick="selectImage('${card.imgLink}', ${index})">اختر</button>
+            <div id="${index}" class="card mb-3 mx-auto" data-img-link="${card.imgLink}" data-title="${card.title}" style="max-width: 100%; width: 300px;">
+                <img src="${card.imgLink}" class="card-img-top" alt="..." style="width: 100%; height: auto; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-3">${card.title}</h5>
+                    <button class="btn btn-primary w-100" onclick="selectImage('${card.imgLink}', ${index})">اختر</button>
                 </div>
             </div>
-            <br>
         `;
     });
 }
